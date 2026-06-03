@@ -1,78 +1,141 @@
-# Fil a l’Agulla - Astro Website
+# Fil a l’Agulla
 
-Improved Astro version of the Fil a l’Agulla static preview website.
+Static business website for **Fil a l’Agulla**, a tailoring and clothing alterations workshop in Reus.
 
-## What changed
+Built with [Astro](https://astro.build/) and designed as a lightweight, fast-loading one-page website with reusable components, editable business data, and static deployment support.
 
-- Converted the static page into an Astro project.
-- Added reusable components.
-- Moved business content into `src/data/site.ts`.
-- Rewrote the copy so it sounds like a real tailoring business page, not a web-design preview.
-- Added quick info, concrete services, process, one placeholder review and stronger contact section.
-- Kept the visual identity: soft pink, cream, handmade/tailoring style.
-- Added safe reveal animations that do not hide content if JavaScript fails.
-- Added a GitHub Pages workflow.
+## Overview
 
-## Run locally
+This project contains a polished Astro version of the Fil a l’Agulla landing page. The site presents the workshop, its services, process, gallery, review placeholder, and contact information.
+
+The content is managed from a central data file, making it easy to update business details without editing every component manually.
+
+## Tech Stack
+
+* Astro
+* TypeScript
+* CSS
+* GitHub Actions
+* Static hosting compatible output
+
+## Project Structure
+
+```text
+public/
+  assets/
+    img/              Static images
+  scripts/
+    main.js           Small client-side interactions
+
+src/
+  components/         Reusable page sections
+  data/
+    site.ts           Business content and links
+  layouts/
+    BaseLayout.astro  Main document layout
+  pages/
+    index.astro       Homepage
+  styles/
+    global.css        Global design system and responsive styles
+
+.github/
+  workflows/
+    deploy.yml        GitHub Pages deployment workflow
+```
+
+## Local Development
+
+Install dependencies:
 
 ```bash
 npm install
+```
+
+Start the development server:
+
+```bash
 npm run dev
 ```
 
-## Build
+Build the production version:
 
 ```bash
 npm run build
+```
+
+Preview the production build locally:
+
+```bash
 npm run preview
 ```
 
-## Main files to edit
+## Content Management
+
+Most business information is stored in:
 
 ```text
-src/data/site.ts          Business info, links, services, gallery, review
-src/styles/global.css     Colors, layout, spacing, responsive design
-src/components/           Individual website sections
-public/assets/img/        Images
+src/data/site.ts
 ```
 
-## Images included
+Use this file to update:
 
-Images are stored in:
+* Business name and tagline
+* Address and location
+* Phone and WhatsApp number
+* Instagram and Google Maps links
+* Services
+* Gallery images
+* Process steps
+* Review placeholder
+* Contact details
+
+Static images are stored in:
 
 ```text
 public/assets/img/
 ```
 
-## GitHub Pages
+## Deployment
 
-The included workflow deploys the built `dist/` folder using GitHub Actions.
+### GitHub Pages
 
-In GitHub, go to:
+The current Astro config is set for:
 
 ```text
-Settings > Pages > Source: GitHub Actions
+https://anubis7star.github.io/fil_a_lagulla_preview/
 ```
 
-The Astro config automatically detects the GitHub repository name during GitHub Actions and sets the correct `base` path for project pages.
+### Static Hosting / Hostinger
 
-## Hostinger
-
-For Hostinger shared hosting:
+Generate the production build:
 
 ```bash
 npm run build
 ```
 
-Then upload the **contents of `dist/`** to `public_html`.
+Upload the contents of:
 
-## Notes before using with the real client
+```text
+dist/
+```
 
-Update these in `src/data/site.ts`:
+to the hosting provider’s public web directory, such as:
 
-- Real address
-- Phone number
-- WhatsApp link
-- Google Maps link
-- Final opening hours, if needed
-- Real Google reviews when available
+```text
+public_html/
+```
+
+Do not upload the full Astro source project to shared hosting unless the provider specifically supports Node-based builds.
+
+## Notes
+
+This project is designed as a static website. There is no backend, database, CMS, authentication, or server-side form handling.
+
+Before publishing the final client version, review and update the business data in `src/data/site.ts`, especially:
+
+* Final address
+* Phone number
+* WhatsApp number
+* Google Maps link
+* Opening hours
+* Real reviews, if available
