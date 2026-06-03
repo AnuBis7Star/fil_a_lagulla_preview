@@ -1,10 +1,6 @@
-import { defineConfig } from 'astro/config';
-
-const repo = process.env.GITHUB_REPOSITORY?.split('/')[1];
-const owner = process.env.GITHUB_REPOSITORY?.split('/')[0];
-const isGitHubPages = process.env.GITHUB_ACTIONS === 'true' && repo && owner;
+import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: isGitHubPages ? `https://${owner}.github.io` : 'https://example.com',
-  base: isGitHubPages ? `/${repo}` : '/',
+  site: "https://anubis7star.github.io",
+  base: "/fil_a_lagulla_preview",
 });
