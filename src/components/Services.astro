@@ -1,0 +1,33 @@
+---
+import { services, serviceDetails } from '../data/site';
+---
+<section id="serveis">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="kicker">Serveis</span>
+        <h2>Solucions de costura per al dia a dia i per moments especials.</h2>
+      </div>
+      <p>
+        Treballem cada peça amb atenció, escoltant què necessites i buscant la millor manera d’adaptar, reparar o crear roba que et quedi bé.
+      </p>
+    </div>
+
+    <div class="services">
+      {services.map((service, index) => (
+        <article class="service reveal">
+          <div class="num">{String(index + 1).padStart(2, '0')}</div>
+          <h3>{service.title}</h3>
+          <p>{service.text}</p>
+        </article>
+      ))}
+    </div>
+
+    <div class="service-list reveal">
+      <h3>També fem</h3>
+      <ul>
+        {serviceDetails.map((detail) => <li>{detail}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+---
+import { trustPoints } from '../data/site';
+const base = import.meta.env.BASE_URL;
+---
+<section id="taller" class="about">
+  <div class="wrap about-grid">
+    <div class="portrait reveal"><img src={`${base}assets/img/modista_taller.jpg`} alt="Treball de costura al taller" loading="lazy" /></div>
+    <div class="copy-card reveal">
+      <span class="kicker">El taller</span>
+      <h2>Ofici, proximitat i confiança.</h2>
+      <p>
+        Fil a l'Agulla és un espai de costura on cada peça es mira amb calma, des d’un baix senzill fins a una transformació més especial.
+      </p>
+      <p>
+        L’objectiu és que surtis del taller amb una peça còmoda, ben acabada i adaptada a tu, ja sigui per continuar aprofitant roba que t’estimes o per crear una peça nova.
+      </p>
+      <div class="ticks">
+        {trustPoints.map((point) => <div class="tick">{point}</div>)}
+      </div>
+    </div>
+  </div>
+</section>

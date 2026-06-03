@@ -1,0 +1,25 @@
+---
+import { processSteps } from '../data/site';
+---
+<section id="proces">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="kicker">Com funciona</span>
+        <h2>De la consulta a la peça acabada.</h2>
+      </div>
+      <p>
+        Un procés senzill perquè sàpigues què passarà des del primer contacte fins que reculls la peça.
+      </p>
+    </div>
+    <div class="process">
+      {processSteps.map((step, index) => (
+        <article class="step reveal">
+          <b>{String(index + 1).padStart(2, '0')}</b>
+          <h3>{step.title}</h3>
+          <p>{step.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

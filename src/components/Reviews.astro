@@ -1,0 +1,16 @@
+---
+import { review } from '../data/site';
+---
+<section class="reviews" aria-label="Ressenyes">
+  <div class="wrap review-card reveal">
+    <div>
+      <span class="kicker">Confiança</span>
+      <h2>Una experiència propera i cuidada.</h2>
+    </div>
+    <blockquote>
+      “{review.quote}”
+      <cite>{review.author}</cite>
+      <small>{review.note}</small>
+    </blockquote>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+---
+import { business, navItems } from '../data/site';
+const base = import.meta.env.BASE_URL;
+---
+<header class="topbar" data-header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label={business.name}>
+      <img src={`${base}${business.logo}`} alt={`Logo ${business.name}`} />
+      <span>{business.name}<small>{business.tagline}</small></span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-menu-toggle>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Obrir menú</span>
+    </button>
+
+    <nav class="links" id="primary-nav" aria-label="Navegació principal" data-nav-links>
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+
+    <a class="btn nav-button" href="#contacte">Consultar</a>
+  </div>
+</header>

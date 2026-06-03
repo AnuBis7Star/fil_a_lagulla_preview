@@ -1,75 +1,78 @@
-# Fil a l’Agulla Preview
+# Fil a l’Agulla - Astro Website
 
-Static preview website for a tailoring and clothes-alteration business in Reus, focused on handmade work, repairs, custom clothing and local trust.
+Improved Astro version of the Fil a l’Agulla static preview website.
 
-## Live demo
+## What changed
 
-Add the GitHub Pages, Netlify or Vercel link here after deployment.
+- Converted the static page into an Astro project.
+- Added reusable components.
+- Moved business content into `src/data/site.ts`.
+- Rewrote the copy so it sounds like a real tailoring business page, not a web-design preview.
+- Added quick info, concrete services, process, one placeholder review and stronger contact section.
+- Kept the visual identity: soft pink, cream, handmade/tailoring style.
+- Added safe reveal animations that do not hide content if JavaScript fails.
+- Added a GitHub Pages workflow.
 
-Example:
-
-```text
-https://your-github-username.github.io/fil_a_lagulla_preview/
-```
-
-## Project type
-
-- Business type: Tailoring / clothes alterations
-- Status: Preview / concept
-- Language/content: mainly Catalan
-- Structure: static website
-
-## Features
-
-- Single-page landing preview
-- Service sections for custom clothing and alterations
-- Image gallery with shop/workshop visuals
-- Local business positioning
-- Responsive static layout
-
-## Technologies
-
-- HTML5
-- CSS3
-
-## Folder structure
-
-```text
-fil_a_lagulla_preview/
-├── index.html
-├── styles.css / inline styles if applicable
-├── script.js / inline scripts if applicable
-└── assets/
-```
-
-## How to run locally
-
-Open `index.html` directly in your browser, or run a small local server from this folder:
+## Run locally
 
 ```bash
-python3 -m http.server 5500
+npm install
+npm run dev
 ```
 
-Then open:
+## Build
+
+```bash
+npm run build
+npm run preview
+```
+
+## Main files to edit
 
 ```text
-http://localhost:5500
+src/data/site.ts          Business info, links, services, gallery, review
+src/styles/global.css     Colors, layout, spacing, responsive design
+src/components/           Individual website sections
+public/assets/img/        Images
 ```
 
-## How to publish with GitHub Pages
+## Images included
 
-1. Create a new GitHub repository named `fil_a_lagulla_preview`.
-2. Upload all files from this folder to the repository.
-3. Go to **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select branch **main** and folder **/root**.
-6. Save and wait until GitHub gives you the public URL.
+Images are stored in:
 
-## Notes before using with a real client
+```text
+public/assets/img/
+```
 
-- The main file has been renamed to index.html so GitHub Pages can publish it automatically.
-- Final copy, contact details and real service list should be confirmed before launch.
+## GitHub Pages
 
-## Author
+The included workflow deploys the built `dist/` folder using GitHub Actions.
 
-Created as a static preview website by Andreea Scurt.
+In GitHub, go to:
+
+```text
+Settings > Pages > Source: GitHub Actions
+```
+
+The Astro config automatically detects the GitHub repository name during GitHub Actions and sets the correct `base` path for project pages.
+
+## Hostinger
+
+For Hostinger shared hosting:
+
+```bash
+npm run build
+```
+
+Then upload the **contents of `dist/`** to `public_html`.
+
+## Notes before using with the real client
+
+Update these in `src/data/site.ts`:
+
+- Real address
+- Phone number
+- WhatsApp link
+- Google Maps link
+- Final opening hours, if needed
+- Real Google reviews when available
