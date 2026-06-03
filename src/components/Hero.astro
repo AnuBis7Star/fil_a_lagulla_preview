@@ -1,6 +1,6 @@
 ---
 import { business, stats } from '../data/site';
-const base = import.meta.env.BASE_URL;
+import { withBase } from '../utils/paths';
 ---
 <section class="hero" id="top">
   <div class="wrap hero-grid">
@@ -25,9 +25,9 @@ const base = import.meta.env.BASE_URL;
     </div>
 
     <div class="visual reveal" aria-label="Fotografies del taller">
-      <div class="hero-card main"><img src={`${base}${business.heroMain}`} alt="Façana del taller Fil a l'Agulla a Reus" /></div>
-      <div class="hero-card side"><img src={`${base}${business.heroSide}`} alt="Vestits blancs fets a mida" /></div>
-      <div class="logo-badge"><img src={`${base}${business.logo}`} alt={`Logo ${business.name}`} /></div>
+      <div class="hero-card main"><img src={withBase(business.heroMain)} alt="Façana del taller Fil a l'Agulla a Reus" /></div>
+      <div class="hero-card side"><img src={withBase(business.heroSide)} alt="Vestits blancs fets a mida" /></div>
+      <div class="logo-badge"><img src={withBase(business.logo)} alt={`Logo ${business.name}`} /></div>
       <div class="floating-note"><b>Roba a mida</b><span>Vestits, arranjaments, transformacions i peces úniques fetes al taller.</span></div>
     </div>
   </div>

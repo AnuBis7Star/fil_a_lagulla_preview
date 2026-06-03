@@ -1,6 +1,6 @@
 ---
 import { gallery } from '../data/site';
-const base = import.meta.env.BASE_URL;
+import { withBase } from '../utils/paths';
 ---
 <section id="treballs">
   <div class="wrap">
@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL;
     <div class="gallery-grid">
       {gallery.map((item) => (
         <figure class={`shot ${item.className} reveal`}>
-          <img src={`${base}${item.image}`} alt={item.title} loading="lazy" />
+          <img src={withBase(item.image)} alt={item.title} loading="lazy" />
           <figcaption class="label">
             <strong>{item.title}</strong>
             <span>{item.text}</span>

@@ -1,10 +1,10 @@
 ---
 import { trustPoints } from '../data/site';
-const base = import.meta.env.BASE_URL;
+import { withBase } from '../utils/paths';
 ---
 <section id="taller" class="about">
   <div class="wrap about-grid">
-    <div class="portrait reveal"><img src={`${base}assets/img/modista_taller.jpg`} alt="Treball de costura al taller" loading="lazy" /></div>
+    <div class="portrait reveal"><img src={withBase("assets/img/modista_taller.jpg")} alt="Treball de costura al taller" loading="lazy" /></div>
     <div class="copy-card reveal">
       <span class="kicker">El taller</span>
       <h2>Ofici, proximitat i confiança.</h2>

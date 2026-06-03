@@ -1,11 +1,11 @@
 ---
 import { business, navItems } from '../data/site';
-const base = import.meta.env.BASE_URL;
+import { withBase } from '../utils/paths';
 ---
 <header class="topbar" data-header>
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label={business.name}>
-      <img src={`${base}${business.logo}`} alt={`Logo ${business.name}`} />
+      <img src={withBase(business.logo)} alt={`Logo ${business.name}`} />
       <span>{business.name}<small>{business.tagline}</small></span>
     </a>
 

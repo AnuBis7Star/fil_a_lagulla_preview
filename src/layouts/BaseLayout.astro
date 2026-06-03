@@ -1,10 +1,10 @@
 ---
 import '../styles/global.css';
 import { business } from '../data/site';
+import { withBase } from '../utils/paths';
 
 const { title = "Fil a l'Agulla · Arranjaments de roba i costura a mida a Reus", description = "Taller de costura a Reus especialitzat en arranjaments de roba, ajustos, transformacions, cremalleres, baixos i peces a mida." } = Astro.props;
-const base = import.meta.env.BASE_URL;
-const logoUrl = `${base}${business.logo}`;
+const logoUrl = withBase(business.logo);
 ---
 <!doctype html>
 <html lang="ca">
@@ -31,6 +31,6 @@ const logoUrl = `${base}${business.logo}`;
   </head>
   <body>
     <slot />
-    <script is:inline src={`${base}scripts/main.js`}></script>
+    <script is:inline src={withBase("scripts/main.js")}></script>
   </body>
 </html>
